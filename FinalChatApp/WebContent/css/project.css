@@ -1,0 +1,210 @@
+body {
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+}
+main {
+    margin: 1em;
+}
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.3em;
+    padding-top: 0.2em;
+}
+p {
+    margin: 1em 0;
+}
+
+ul {
+	list-style-type: circle;
+	list-style-position:inside;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* zebra strepen */
+tr:nth-of-type(2n+1) {
+    background: #eee;
+}
+th {
+    background: #333;
+    color: white;
+    font-weight: bold;
+}
+td,
+th {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+/* NAV */
+.nav {
+    width: 100%;
+    margin-bottom: auto;
+    height: 1.8em;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+/*.nav li a {
+    vertical-align: middle;
+}*/
+.nav ul {
+    list-style-type: none;
+}
+.nav li {
+    float: left;
+    width: 13em;
+    padding: 0 auto;
+}
+.nav a {
+    display: block;
+}
+.nav a {
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 0;
+display:table-cell;
+height:1.8em;
+line-height:2em;
+vertical-align:middle;
+
+}
+
+.nav ul .current a {
+    background-color: #073F70;
+}
+.nav a:visited {
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.nav a:hover {
+    background-color: #073F70;
+}
+.nav ul li {
+    display: inline-block;
+}
+
+.nav li a:link,
+.nav li a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: .3s background-color;
+    text-align: center;
+    padding-left: 0em;
+    
+}
+.nav a:hover {
+    background-color: #073F70;
+    display: block;
+}
+
+/* top-label formulier */
+label {
+    display: block
+}
+/*
+input {
+    max-width: 99%;
+    min-width: 26em;
+}
+input.small {
+    max-width: 99%;
+    min-width: 10em;
+}
+*/
+button a {
+    text-decoration: none;
+}
+h1 img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1.8em auto -2em 0em;
+}
+.bron {
+    margin-left: 1em;
+    background-color: rgba(255, 255, 255, 0.298039);
+    font-size: 0.7em;
+}
+img.fout {
+    float: left;
+    padding-right: 1em;
+}
+
+/* MY CSS */
+.HeaderItem {
+	display: block;
+	width: 100%;
+	line-height:2em;
+	background-color: #333;
+	font-weight: bold;
+    color: #fff;
+}
+h1 {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.HeaderItem input {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	margin-left:auto;
+	margin-right: auto;
+	margin-bottom: 1em;
+	height: 1.5em;
+}
+.HeaderItem button {
+	display: block;
+	width : 80%;
+	height: 2em;
+	margin-left: auto;
+	margin-right: auto;
+}
+#FriendOverview {
+	min-height: 200px;
+	height: auto;
+	overflow: auto;
+}
+#DiscussionArticle {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.TopicBody {
+	background-color: whitesmoke;
+	margin-top: 20px;	
+}
+#chatbox {
+	width : 70%;
+	margin-left:auto;
+	margin-right: auto;
+	margin-top: 250px;
+	min-height: 200px;
+	height:auto;
+	overflow:auto;
+	background-color: whitesmoke;
+}
+#chatbox input {
+	width: 99%;
+}
+#chatbox button {
+	width: 100%;
+}
+#hide {
+	position: absolute;
+	bottom: 0;
+}
+/*MEDIA QUERIES*/

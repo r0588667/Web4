@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="Login">controller.handler.synchroon.Login</entry>
+<entry key="Logout">controller.handler.synchroon.Logout</entry>
+<entry key="SignUp">controller.handler.synchroon.SignUp</entry>
+<entry key="ToDiscussion">controller.handler.synchroon.ToDiscussion</entry>
+<!-- ASYNCHROON.POLLING -->
+<entry key="checkFriendList">controller.handler.polling.CheckFriendList</entry>
+<entry key="addFriend">controller.handler.polling.AddFriend</entry>
+<entry key="changestatus">controller.handler.polling.ChangeStatus</entry>
+<entry key="checkStatus">controller.handler.polling.CheckStatus</entry>
+<!-- ASYNCHROON.PUSH -->
+
+<!-- ASYNCHROON.JQUERY -->
+<entry key="startChat">controller.handler.jquery.StartChat</entry>
+<entry key="sendMessage">controller.handler.jquery.SendMessage</entry>
+<entry key="getMessage">controller.handler.jquery.GetMessage</entry>
+</properties>
