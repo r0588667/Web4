@@ -1,3 +1,4 @@
+var path = "http://localhost:8082/FinalChatApp/ControllerServlet?";
 $(function(){
 	startChat();
 	sendMessage();
@@ -7,31 +8,37 @@ $(function(){
 
 function startChat(){
 	$("#startChat").click(function(){
-		var myid = $("#startChatID").val();
+		var myid = $("#myid").val();
 		var chatmate = $("#startChatID").val();
+		if(myid == chatmate){
+			alert("You can't chat with yourself");
+		}
+		else {
 		$.ajax({
-			url: "http://localhost:8082/FinalChatApp/ControllerServlet?action=startChat",
+			url: path+"action=startChat",
 			type: "POST",
 			data : "myid="+myid+"&chatmate="+chatmate,
 			success:function(){
 				$("#chatmate").val(chatmate);
 				$("#chatHeader").text("Sending Message to: "+chatmate);
+				$("#chatMessages").empty();
 			}
 		})
+		}
 	});
 }
 
 function sendMessage(){
 	$("#sendMessage").click(function(){
-		var sender = $("#startChatID").val();
+		var sender = $("#myid").val();
 		var receiver = $("#startChatID").val();
 		var message = $("#messageBox").val();
 		$.ajax({
-			url: "http://localhost:8082/FinalChatApp/ControllerServlet?action=sendMessage",
+			url: path+"action=sendMessage",
 			type: "POST",
 			data : "sender="+sender+"&receiver="+receiver+"&message="+message,
 			success:function(){
-				$("#chatbox").append("<p>"+sender+" :"+message+" </p>");
+				$("#chatMessages").append("<p>"+sender+" :"+message+" </p>");
 				$("#messageBox").val('');
 			}
 		})
@@ -39,14 +46,14 @@ function sendMessage(){
 }
 function getMessage(){
 	$.ajax({
-		url: "http://localhost:8082/FinalChatApp/ControllerServlet?action=getMessage",
+		url: path+"action=getMessage",
 		data : "myid="+$("#myid").val(),
 		type: "POST",
 		datatype : "JSON",
 		success:function(data){
 			data = JSON.parse(data);
 			for(var i = 0; i < data.length;i++){
-				$("#chatbox").append("<p>"+data[i].sender+": "+data[i].message+"</p>");
+				$("#chatMessages").append("<p>"+data[i].sender+": "+data[i].message+"</p>");
 			}
 		}
 	})

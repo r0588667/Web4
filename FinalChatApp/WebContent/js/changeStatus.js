@@ -1,5 +1,11 @@
 var xHRObject = new XMLHttpRequest();
 
+function setStatus(){
+	var status = document.getElementById("setStatus").value;
+	changeStatus(status);
+	document.getElementById("setStatus").innerHTML = '';
+}
+
 function changeStatus(status) {
 	var myid = document.getElementById("myid").value;
 	xHRObject.open("POST", "ControllerServlet", true);

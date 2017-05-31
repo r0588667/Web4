@@ -2,6 +2,8 @@ package domain.model;
 
 import java.util.Map;
 
+import org.json.JSONObject;
+
 public class User {
 
 	private String firstName,lastName;
@@ -9,19 +11,27 @@ public class User {
 	private byte[] salt = new byte[20];
 	private String id;
 	private String status;
+	private int age;
 	private FriendList friendlist;
 	
-	public User(String id,String firstName,String lastName,String password){
+	public User(String id,String firstName,String lastName,String password,int age){
 		this.setId(id);
 		this.setFirstName(firstName);
 		this.setLastName(lastName);
 		this.setStatus("Offline");
 		this.generateSalt();
 		this.setPassword(password);
+		this.setAge(age);
 		friendlist = new FriendList(this);
 		
 	}
 	
+	public int getAge(){
+		return age;
+	}
+	public void setAge(int age){
+		this.age = age;
+	}
 
 	public String getFirstName() {
 		return firstName;
@@ -106,7 +116,14 @@ public class User {
 	public String toString(){
 		return getId()+","+getFirstName()+","+getStatus();
 	}
-	public String toJSON(){
-		return "{id:"+getId()+",status:"+getStatus()+",firstName:"+getFirstName()+",lastName:"+getLastName()+"}";
+	public JSONObject toJSON(){
+		JSONObject result = new JSONObject();
+		result.put("id", getId());
+		result.put("status",getStatus());
+		result.put("firstName", getFirstName());
+		result.put("lastName", getLastName());
+		result.put("age", getAge());
+		return result;
+		//return "{id:"+getId()+",status:"+getStatus()+",firstName:"+getFirstName()+",lastName:"+getLastName()+"}";
 	}
 }

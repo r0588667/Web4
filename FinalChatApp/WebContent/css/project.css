@@ -182,13 +182,15 @@ h1 {
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
+	background-color: whitesmoke;
+	margin-top: 30px;
 }
 .TopicBody {
 	background-color: whitesmoke;
 	margin-top: 20px;	
 }
 #chatbox {
-	width : 70%;
+	width : 50%;
 	margin-left:auto;
 	margin-right: auto;
 	margin-top: 250px;
@@ -206,5 +208,20 @@ h1 {
 #hide {
 	position: absolute;
 	bottom: 0;
+}
+#signUpForm{
+	width : 80%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: whitesmoke;
+}
+#signUpForm h1 {
+	text-align: center;
+}
+#signUpForm input {
+	width: 30%;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
 }
 /*MEDIA QUERIES*/

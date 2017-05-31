@@ -17,6 +17,11 @@
 </head>
 
 <body onload="checkForFriends()">
+<c:choose>
+<c:when test="${empty id }">
+<h1> You need to log in to see this page</h1>
+</c:when>
+<c:otherwise>
 <input type="hidden" id="myid" value="${id}">
 <input type="hidden" id="chatmate" value="">
 <nav class="nav">
@@ -29,6 +34,7 @@
                     					<li id="id">${friend.id}</li>
                     					<li id ="friendfirstName">${friend.firstName}</li>
                     					<li id="friendlastName">${friend.lastName}</li>
+                    					<li>${friend.age}</li>
                     					<li id="friendstatus">${friend.status}</li>
                     				</ul>
                     			</c:forEach>
@@ -72,6 +78,8 @@
 			<h1 id="chatHeader"></h1>
             <input id="messageBox" type="text">
             <button id="sendMessage">Send Message</button>
+            <div id="chatMessages">
+			</div>
             </article>
 		
 	</div>
@@ -82,5 +90,7 @@
 	<script src="js/changeStatus.js"></script>
 	<script src="js/JQueryChat.js"></script>
 	<script src="js/hide.js"></script>
+</c:otherwise>
+</c:choose>
 </body>
 </html>

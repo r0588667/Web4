@@ -33,7 +33,7 @@ public class CheckFriendList extends PollingHandler {
 		}
 		else {
 		for(User u : users){
-			JSONObject obj = new JSONObject(u.toJSON());
+			JSONObject obj = u.toJSON();
 			array.put(obj);
 		}
 		response.getWriter().write(array.toString());

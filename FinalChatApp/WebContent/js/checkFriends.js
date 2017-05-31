@@ -30,7 +30,7 @@ function updateFriendList(friendarray){
 		var ul = document.getElementById("theid="+theid);
 		if (ul != null){
 			var lis = ul.children;
-			var friendstatus = lis[3];
+			var friendstatus = lis[4];
 			friendstatus.innerHTML = status;
 		}
 		else {
@@ -43,11 +43,14 @@ function updateFriendList(friendarray){
 			lifirstName.innerHTML = array[i].firstName;
 			var lilastName = document.createElement("li");
 			lilastName.innerHTML = array[i].lastName;
+			var liAge = document.createElement("li");
+			liAge.innerHTML = array[i].age;
 			var listatus = document.createElement("li");
 			listatus.innerHTML = status;
 			newul.appendChild(litheid);
 			newul.appendChild(lifirstName);
 			newul.appendChild(lilastName);
+			newul.appendChild(liAge);
 			newul.appendChild(listatus);
 			friendOverview.appendChild(newul);
 		}

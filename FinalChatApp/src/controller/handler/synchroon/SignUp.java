@@ -24,7 +24,8 @@ public class SignUp extends SynchroonRequestHandler {
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
 		String password = request.getParameter("password");
-		User user = new User(id, firstName, lastName, password);
+		int age = Integer.parseInt(request.getParameter("age"));
+		User user = new User(id, firstName, lastName, password,age);
 		getModel().addUser(user);
 		setDestination("index.jsp");
 		}

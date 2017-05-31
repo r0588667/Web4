@@ -2,6 +2,7 @@ package controller.handler.jquery;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 import org.json.JSONArray;
 
@@ -35,9 +36,11 @@ public class Conversation {
 		return result;
 	}
 	public static void clearMessagesForReceiver(String receiver){
-		for(Message m: messages){
+		ListIterator<Message> ls = messages.listIterator();
+		while(ls.hasNext()){
+			Message m = ls.next();
 			if(m.getReceiver().equals(receiver)){
-				messages.remove(m);
+				ls.remove();
 			}
 		}
 	}

@@ -37,5 +37,6 @@
 		</form>
 	</div>
 	<a href="ControllerServlet?action=ToDiscussion">Discussions</a>
+	<a href="signUp.jsp">Sign Up</a>
     </body>
 </html>

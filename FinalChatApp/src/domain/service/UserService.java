@@ -2,6 +2,8 @@ package domain.service;
 
 import java.util.Map;
 
+import org.json.JSONArray;
+
 import domain.db.InternalUserDatabase;
 import domain.db.UserDatabase;
 import domain.model.User;
@@ -35,5 +37,8 @@ public class UserService {
 	}
 	public Map<String,User> getUsers(){
 		return db.getUsers();
+	}
+	public JSONArray getUsersAsJSONArray(){
+		return db.getAllUsersAsJSONArray();
 	}
 }

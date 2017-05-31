@@ -1,4 +1,4 @@
-package controller.handler.jquery;
+package controller.handler.angular;
 
 import java.io.IOException;
 
@@ -6,14 +6,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.JSONArray;
-
 import controller.handler.polling.PollingHandler;
 import domain.service.UserService;
 
-public class GetMessage extends PollingHandler {
+public class GetUsers extends PollingHandler {
 
-	public GetMessage(UserService service) {
+	public GetUsers(UserService service) {
 		super(service);
 		// TODO Auto-generated constructor stub
 	}
@@ -21,17 +19,11 @@ public class GetMessage extends PollingHandler {
 	@Override
 	public void handelRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-			String myid = request.getParameter("myid");
-			JSONArray result = Conversation.getMessageForReceiver(myid);
-			if(result.length() == 0){
-				response.getWriter().write("[]");
-			}
-			else {
-				response.getWriter().write(result.toString());
-				Conversation.clearMessagesForReceiver(myid);
-			}
-			
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		response.setContentType("application/json");
+		response.getWriter().write(getModel().getUsersAsJSONArray().toString());
+		
 	}
 
-	
 }

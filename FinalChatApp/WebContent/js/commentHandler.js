@@ -1,10 +1,10 @@
 var xHRObject = new XMLHttpRequest();
 var webSocket
-var path = "FinalChatApp";
+var path = "ws://localhost:8082/FinalChatApp/HandlerEndPoint";
 window.onunload = closeSocket
 
 function openSocket(){
-	webSocket = new WebSocket("ws://localhost:8082/"+path+"/HandlerEndPoint");
+	webSocket = new WebSocket(path);
 	
 	 webSocket.onopen = function(event){
      };

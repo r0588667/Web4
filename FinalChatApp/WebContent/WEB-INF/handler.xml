@@ -16,4 +16,8 @@
 <entry key="startChat">controller.handler.jquery.StartChat</entry>
 <entry key="sendMessage">controller.handler.jquery.SendMessage</entry>
 <entry key="getMessage">controller.handler.jquery.GetMessage</entry>
+<entry key="removeMessage">controller.handler.jquery.RemoveMessage</entry>
+
+<!-- ANGULAR -->
+<entry key="getUsers">controller.handler.angular.GetUsers</entry>
 </properties>
